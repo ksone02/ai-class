@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -49,6 +50,9 @@ export function PromptForm() {
 
       console.log(response);
 
+      if (!response.content) {
+        throw new Error('기획안 생성 중 오류가 발생했습니다.');
+      }
       setResult(response.content);
     } catch (error) {
       console.error(error);
@@ -138,18 +142,12 @@ export function PromptForm() {
                     {...props}
                   />
                 ),
-                code: ({ node, inline, ...props }) =>
-                  inline ? (
-                    <code
-                      className="px-1 py-0.5 bg-gray-100 rounded text-sm"
-                      {...props}
-                    />
-                  ) : (
-                    <code
-                      className="block bg-gray-100 p-4 rounded-lg my-4 text-sm overflow-x-auto"
-                      {...props}
-                    />
-                  ),
+                code: ({ node, ...props }) => (
+                  <code
+                    className="block bg-gray-100 p-4 rounded-lg my-4 text-sm overflow-x-auto"
+                    {...props}
+                  />
+                ),
                 blockquote: ({ node, ...props }) => (
                   <blockquote
                     className="border-l-4 border-gray-200 pl-4 my-4 italic"
