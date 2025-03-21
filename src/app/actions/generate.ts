@@ -6,8 +6,6 @@ if (!process.env.OPENAI_API_KEY) {
   throw new Error('Missing OpenAI API Key');
 }
 
-export const runtime = 'edge';
-
 export async function generatePlan(prompt: string) {
   try {
     const enhancedSystemPrompt = `당신은 15년 경력의 CSR(기업 사회공헌 활동) 전문 기획자이자 컨설턴트입니다.
