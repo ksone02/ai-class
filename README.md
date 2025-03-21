@@ -1,24 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Class
 
-## Getting Started
+Next.js 14 기반의 AI 클래스 프로젝트입니다.
 
-First, run the development server:
+## 기술 스택
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- ESLint
+
+## 시작하기
 
 ```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 프로덕션 빌드
+npm run build
+
+# 프로덕션 서버 실행
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 프로젝트 구조
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  ├── app/              # App Router 구조
+  │   ├── layout.tsx    # 루트 레이아웃
+  │   └── page.tsx      # 메인 페이지
+  ├── components/       # 재사용 가능한 컴포넌트
+  ├── lib/             # 유틸리티 함수
+  └── types/           # TypeScript 타입 정의
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 환경 변수
+
+프로젝트 루트에 `.env` 파일을 생성하고 다음 환경 변수를 설정하세요:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3000
+NODE_ENV=development
+```
 
 ## Learn More
 
